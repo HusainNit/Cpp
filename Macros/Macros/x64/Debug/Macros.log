@@ -1,0 +1,3 @@
+﻿  Macros.cpp
+C:\Users\Administrator\source\repos\Cpp\Macros\Macros\Macros.cpp(5,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Macros.vcxproj -> C:\Users\Administrator\source\repos\Cpp\Macros\x64\Debug\Macros.exe
