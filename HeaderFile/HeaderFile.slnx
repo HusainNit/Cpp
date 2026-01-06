@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="HeaderFile/HeaderFile.vcxproj" Id="2fdd6859-f7bd-42ab-9ea8-efd5f2b18525" />
+</Solution>
