@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="hi-loGame/hi-loGame.vcxproj" Id="c1a837fa-1993-4002-9c04-b9ba80ad461e" />
+</Solution>

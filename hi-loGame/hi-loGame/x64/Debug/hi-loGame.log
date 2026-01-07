@@ -1,0 +1,3 @@
+﻿  gameEngine.cpp
+C:\Users\Administrator\source\repos\Cpp\hi-loGame\hi-loGame\gameEngine.cpp(16,1): warning C4715: 'gameEngine': not all control paths return a value
+  hi-loGame.vcxproj -> C:\Users\Administrator\source\repos\Cpp\hi-loGame\x64\Debug\hi-loGame.exe
