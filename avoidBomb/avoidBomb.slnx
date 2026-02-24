@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="avoidBomb/avoidBomb.vcxproj" Id="2a3befbc-75eb-455f-91d5-1bafefa79222" />
+</Solution>
