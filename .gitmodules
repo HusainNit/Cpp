@@ -1,0 +1,9 @@
+[submodule "debugginTactics/src/3rd-party/plog"]
+	path = debugginTactics/src/3rd-party/plog
+	url = https://github.com/SergiusTheBest/plog.git
+[submodule "debugginTactics/debugginTactics/src/3rd-party/plog"]
+	path = debugginTactics/debugginTactics/src/3rd-party/plog
+	url = https://github.com/SergiusTheBest/plog.git
+[submodule "debugginTactics/src/3rd-party/spdlog"]
+	path = debugginTactics/src/3rd-party/spdlog
+	url = https://github.com/gabime/spdlog.git
