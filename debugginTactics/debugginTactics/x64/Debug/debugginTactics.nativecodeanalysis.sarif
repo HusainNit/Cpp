@@ -1,0 +1,67 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "MSVC Code Analysis",
+          "version": "14.44.35223.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/debuggintactics.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "92f8c3c118392fa736ce18cd4c93a7889b2f74b8d4221891cbe1ff75bc8a7d16"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/debugwithfunction.h"
+          },
+          "hashes": {
+            "sha-256": "a24726f4d63b87eec480d577efbdf53ddab11df557fc999358b040e8e43c2d20"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/debuggingusingpreprocess.h"
+          },
+          "hashes": {
+            "sha-256": "579597b164db37cfa93959af2f413c9733acc9189e4a7d25d14a1c6f8b80d9f6"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/logging.h"
+          },
+          "hashes": {
+            "sha-256": "319a52a7b059507ae8b279d4cdf19928d1e887c5179d9b9342681bf07f1b1746"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/integrateddebugger.h"
+          },
+          "hashes": {
+            "sha-256": "fc9cdfcbe575ed7b792a4679c73373be7c557581b707e748935450606858b28f"
+          }
+        }
+      ]
+    }
+  ]
+}

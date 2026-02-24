@@ -1,0 +1,2 @@
+C:\Users\Husain21\source\repos\Cpp\debugginTactics\x64\Debug\debugginTactics.exe.lastcodeanalysissucceeded
+C:\Users\Husain21\source\repos\Cpp\debugginTactics\debugginTactics\x64\Debug\NativeCodeAnalysis.read.1.tlog

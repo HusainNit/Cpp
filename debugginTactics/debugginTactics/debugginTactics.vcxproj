@@ -140,11 +140,13 @@
     <ClCompile Include="cErrorFunc.cpp" />
     <ClCompile Include="debugginTactics.cpp" />
     <ClCompile Include="debuggingWithPreprocessorDirective.cpp" />
+    <ClCompile Include="integratedDebugger.cpp" />
     <ClCompile Include="loggingDebugging.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="debuggingUsingPreprocess.h" />
     <ClInclude Include="debugWithfunction.h" />
+    <ClInclude Include="integratedDebugger.h" />
     <ClInclude Include="logging.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

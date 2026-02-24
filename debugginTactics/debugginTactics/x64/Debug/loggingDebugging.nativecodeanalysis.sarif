@@ -1,0 +1,1336 @@
+{
+  "version": "2.1.0",
+  "$schema": "https://schemastore.azurewebsites.net/schemas/json/sarif-2.1.0-rtm.5.json",
+  "runs": [
+    {
+      "results": [
+        {
+          "ruleId": "C26495",
+          "level": "warning",
+          "message": {
+            "text": "Variable 'fmt::v12::writer::file_' is uninitialized. Always initialize a member variable (type.6)."
+          },
+          "analysisTarget": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/loggingdebugging.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/fmt/bundled/format.h"
+                },
+                "region": {
+                  "startLine": 940,
+                  "startColumn": 3
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "fmt::v12::writer::{ctor}",
+                  "decoratedName": "??0writer@v12@fmt@@QEAA@AEAV?$buffer@D@detail@12@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "properties": {
+            "targetSymbol": "fmt::v12::writer::file_"
+          }
+        },
+        {
+          "ruleId": "C26800",
+          "level": "warning",
+          "message": {
+            "text": "Use of a moved from object: ''user_chars'' (lifetime.1)."
+          },
+          "analysisTarget": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/loggingdebugging.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                },
+                "region": {
+                  "startLine": 1345,
+                  "startColumn": 9
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "spdlog::pattern_formatter::compile_pattern_",
+                  "decoratedName": "?compile_pattern_@pattern_formatter@spdlog@@AEAAXAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ],
+          "codeFlows": [
+            {
+              "threadFlows": [
+                {
+                  "locations": [
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1315,
+                            "startColumn": 39
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1316,
+                            "startColumn": 10
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1316,
+                            "startColumn": 24
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1317,
+                            "startColumn": 51
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1317,
+                            "startColumn": 51
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1318,
+                            "startColumn": 22
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1319,
+                            "startColumn": 15
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1319,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1319,
+                            "startColumn": 40
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1319,
+                            "startColumn": 40
+                          }
+                        },
+                        "message": {
+                          "text": "Branching based on condition 'result.=='. 'false' branch is taken"
+                        }
+                      },
+                      "kinds": [
+                        "Branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1320,
+                            "startColumn": 13
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1320,
+                            "startColumn": 17
+                          }
+                        },
+                        "message": {
+                          "text": "Branching based on condition '(int )(result.*) == 37'. 'true' branch is taken"
+                        }
+                      },
+                      "kinds": [
+                        "Branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1321,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1321,
+                            "startColumn": 17
+                          }
+                        },
+                        "message": {
+                          "text": "Branching based on condition 'result.._N'. 'true' branch is taken"
+                        }
+                      },
+                      "kinds": [
+                        "Branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1323,
+                            "startColumn": 44
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1323,
+                            "startColumn": 48
+                          }
+                        },
+                        "message": {
+                          "text": "Object 'user_chars' is moved."
+                        }
+                      },
+                      "kinds": [
+                        "Custom"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1323,
+                            "startColumn": 38
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1323,
+                            "startColumn": 48
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1326,
+                            "startColumn": 18
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1326,
+                            "startColumn": 50
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1326,
+                            "startColumn": 50
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1326,
+                            "startColumn": 44
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1326,
+                            "startColumn": 28
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1328,
+                            "startColumn": 20
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1328,
+                            "startColumn": 20
+                          }
+                        },
+                        "message": {
+                          "text": "Branching based on condition 'result.=='. 'true' branch is taken"
+                        }
+                      },
+                      "kinds": [
+                        "Branch"
+                      ]
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1335,
+                            "startColumn": 17
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    },
+                    {
+                      "location": {
+                        "physicalLocation": {
+                          "artifactLocation": {
+                            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+                          },
+                          "region": {
+                            "startLine": 1345,
+                            "startColumn": 9
+                          }
+                        }
+                      },
+                      "importance": "unimportant"
+                    }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6294",
+          "level": "warning",
+          "message": {
+            "text": "Ill-defined for-loop.  Loop body not executed."
+          },
+          "analysisTarget": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/loggingdebugging.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/fmt/bundled/base.h"
+                },
+                "region": {
+                  "startLine": 1737,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "fmt::v12::detail::format_string_checker<char,1,0,0>::on_arg_id",
+                  "decoratedName": "?on_arg_id@?$format_string_checker@D$00$0A@$0A@@detail@v12@fmt@@QEAAHV?$basic_string_view@D@34@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26498",
+          "level": "warning",
+          "message": {
+            "text": "The function 'fmt::v12::detail::num_bits<unsigned __int64>' is constexpr, mark variable 'shift' constexpr if compile-time evaluation is desired (con.5)."
+          },
+          "analysisTarget": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/loggingdebugging.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/fmt/bundled/format.h"
+                },
+                "region": {
+                  "startLine": 2720,
+                  "startColumn": 15,
+                  "endLine": 2720,
+                  "endColumn": 47
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "fmt::v12::detail::bigint::multiply",
+                  "decoratedName": "??$multiply@Vuint128_fallback@detail@v12@fmt@@$0A@@bigint@detail@v12@fmt@@AEAAXVuint128_fallback@123@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6294",
+          "level": "warning",
+          "message": {
+            "text": "Ill-defined for-loop.  Loop body not executed."
+          },
+          "analysisTarget": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/loggingdebugging.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/fmt/bundled/base.h"
+                },
+                "region": {
+                  "startLine": 1737,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "fmt::v12::detail::format_string_checker<char,3,0,0>::on_arg_id",
+                  "decoratedName": "?on_arg_id@?$format_string_checker@D$02$0A@$0A@@detail@v12@fmt@@QEAAHV?$basic_string_view@D@34@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6294",
+          "level": "warning",
+          "message": {
+            "text": "Ill-defined for-loop.  Loop body not executed."
+          },
+          "analysisTarget": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/loggingdebugging.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/fmt/bundled/base.h"
+                },
+                "region": {
+                  "startLine": 1737,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "fmt::v12::detail::format_string_checker<char,2,0,0>::on_arg_id",
+                  "decoratedName": "?on_arg_id@?$format_string_checker@D$01$0A@$0A@@detail@v12@fmt@@QEAAHV?$basic_string_view@D@34@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26498",
+          "level": "warning",
+          "message": {
+            "text": "The function 'fmt::v12::detail::exponent_mask<float>' is constexpr, mark variable 'mask' constexpr if compile-time evaluation is desired (con.5)."
+          },
+          "analysisTarget": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/loggingdebugging.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/fmt/bundled/format.h"
+                },
+                "region": {
+                  "startLine": 3507,
+                  "startColumn": 8,
+                  "endLine": 3507,
+                  "endColumn": 45
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "fmt::v12::detail::write",
+                  "decoratedName": "??$write@DV?$basic_appender@D@v12@fmt@@M$0A@@detail@v12@fmt@@YA?AV?$basic_appender@D@12@V312@M@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26498",
+          "level": "warning",
+          "message": {
+            "text": "The function 'fmt::v12::detail::exponent_mask<double>' is constexpr, mark variable 'mask' constexpr if compile-time evaluation is desired (con.5)."
+          },
+          "analysisTarget": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/loggingdebugging.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/fmt/bundled/format.h"
+                },
+                "region": {
+                  "startLine": 3507,
+                  "startColumn": 8,
+                  "endLine": 3507,
+                  "endColumn": 45
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "fmt::v12::detail::write",
+                  "decoratedName": "??$write@DV?$basic_appender@D@v12@fmt@@N$0A@@detail@v12@fmt@@YA?AV?$basic_appender@D@12@V312@N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26498",
+          "level": "warning",
+          "message": {
+            "text": "The function 'fmt::v12::detail::exponent_mask<double>' is constexpr, mark variable 'mask' constexpr if compile-time evaluation is desired (con.5)."
+          },
+          "analysisTarget": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/loggingdebugging.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/fmt/bundled/format.h"
+                },
+                "region": {
+                  "startLine": 3507,
+                  "startColumn": 8,
+                  "endLine": 3507,
+                  "endColumn": 45
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "fmt::v12::detail::write",
+                  "decoratedName": "??$write@DV?$basic_appender@D@v12@fmt@@O$0A@@detail@v12@fmt@@YA?AV?$basic_appender@D@12@V312@O@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C6294",
+          "level": "warning",
+          "message": {
+            "text": "Ill-defined for-loop.  Loop body not executed."
+          },
+          "analysisTarget": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/loggingdebugging.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/fmt/bundled/base.h"
+                },
+                "region": {
+                  "startLine": 1737,
+                  "startColumn": 5
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "fmt::v12::detail::format_string_checker<char,0,0,0>::on_arg_id",
+                  "decoratedName": "?on_arg_id@?$format_string_checker@D$0A@$0A@$0A@@detail@v12@fmt@@QEAAHV?$basic_string_view@D@34@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26498",
+          "level": "warning",
+          "message": {
+            "text": "The function 'fmt::v12::detail::num_significand_bits<float>' is constexpr, mark variable 'significand_mask' constexpr if compile-time evaluation is desired (con.5)."
+          },
+          "analysisTarget": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/loggingdebugging.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/fmt/bundled/format-inl.h"
+                },
+                "region": {
+                  "startLine": 1266,
+                  "startColumn": 22
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "fmt::v12::detail::dragonbox::to_decimal",
+                  "decoratedName": "??$to_decimal@M@dragonbox@detail@v12@fmt@@YA?AU?$decimal_fp@M@0123@M@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26498",
+          "level": "warning",
+          "message": {
+            "text": "The function 'fmt::v12::detail::num_significand_bits<double>' is constexpr, mark variable 'significand_mask' constexpr if compile-time evaluation is desired (con.5)."
+          },
+          "analysisTarget": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/loggingdebugging.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/fmt/bundled/format-inl.h"
+                },
+                "region": {
+                  "startLine": 1266,
+                  "startColumn": 22
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "fmt::v12::detail::dragonbox::to_decimal",
+                  "decoratedName": "??$to_decimal@N@dragonbox@detail@v12@fmt@@YA?AU?$decimal_fp@N@0123@N@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26498",
+          "level": "warning",
+          "message": {
+            "text": "The function 'fmt::v12::detail::num_significand_bits<double>' is constexpr, mark variable 'num_float_significand_bits' constexpr if compile-time evaluation is desired (con.5)."
+          },
+          "analysisTarget": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/loggingdebugging.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/fmt/bundled/format.h"
+                },
+                "region": {
+                  "startLine": 3060,
+                  "startColumn": 14,
+                  "endLine": 3060,
+                  "endColumn": 78
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "fmt::v12::detail::format_hexfloat",
+                  "decoratedName": "??$format_hexfloat@N$0A@@detail@v12@fmt@@YAXNUformat_specs@12@AEAV?$buffer@D@012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26498",
+          "level": "warning",
+          "message": {
+            "text": "The function 'fmt::v12::detail::num_significand_bits<double>' is constexpr, mark variable 'significand_mask' constexpr if compile-time evaluation is desired (con.5)."
+          },
+          "analysisTarget": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/loggingdebugging.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/fmt/bundled/format.h"
+                },
+                "region": {
+                  "startLine": 3184,
+                  "startColumn": 20
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "fmt::v12::detail::format_float",
+                  "decoratedName": "??$format_float@N@detail@v12@fmt@@YAHNHAEBUformat_specs@12@_NAEAV?$buffer@D@012@@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26498",
+          "level": "warning",
+          "message": {
+            "text": "The function 'fmt::v12::detail::num_significand_bits<float>' is constexpr, mark variable 'num_float_significand_bits' constexpr if compile-time evaluation is desired (con.5)."
+          },
+          "analysisTarget": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/loggingdebugging.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/fmt/bundled/format.h"
+                },
+                "region": {
+                  "startLine": 1584,
+                  "startColumn": 16
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "fmt::v12::detail::basic_fp<fmt::v12::detail::uint128_fallback>::assign",
+                  "decoratedName": "??$assign@M$0A@@?$basic_fp@Vuint128_fallback@detail@v12@fmt@@@detail@v12@fmt@@QEAA_NM@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26498",
+          "level": "warning",
+          "message": {
+            "text": "The function 'fmt::v12::detail::num_significand_bits<double>' is constexpr, mark variable 'num_float_significand_bits' constexpr if compile-time evaluation is desired (con.5)."
+          },
+          "analysisTarget": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/loggingdebugging.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/fmt/bundled/format.h"
+                },
+                "region": {
+                  "startLine": 1584,
+                  "startColumn": 16
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "fmt::v12::detail::basic_fp<fmt::v12::detail::uint128_fallback>::assign",
+                  "decoratedName": "??$assign@N$0A@@?$basic_fp@Vuint128_fallback@detail@v12@fmt@@@detail@v12@fmt@@QEAA_NN@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ruleId": "C26498",
+          "level": "warning",
+          "message": {
+            "text": "The function 'fmt::v12::detail::num_significand_bits<double>' is constexpr, mark variable 'num_float_significand_bits' constexpr if compile-time evaluation is desired (con.5)."
+          },
+          "analysisTarget": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/loggingdebugging.cpp"
+          },
+          "locations": [
+            {
+              "physicalLocation": {
+                "artifactLocation": {
+                  "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/fmt/bundled/format.h"
+                },
+                "region": {
+                  "startLine": 1584,
+                  "startColumn": 16
+                }
+              },
+              "logicalLocations": [
+                {
+                  "fullyQualifiedName": "fmt::v12::detail::basic_fp<unsigned __int64>::assign",
+                  "decoratedName": "??$assign@N$0A@@?$basic_fp@_K@detail@v12@fmt@@QEAA_NN@Z",
+                  "kind": "function"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "tool": {
+        "driver": {
+          "name": "PREfast",
+          "fullName": "MSVC Code Analysis",
+          "version": "14.44.35223.0",
+          "informationUri": "https://aka.ms/cpp/ca"
+        }
+      },
+      "invocations": [
+        {
+          "executionSuccessful": true
+        }
+      ],
+      "artifacts": [
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/debuggintactics/loggingdebugging.cpp"
+          },
+          "roles": [
+            "analysisTarget"
+          ],
+          "hashes": {
+            "sha-256": "62618f35af248a685d511b51573379ec2906d1b2472dec8ad5cc5f08fc2a6cfa"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/fmt/bundled/format.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "b4c65350362bf40e76a8e6b450587d912c7081b6eafeafaf3d7bcf53153e17fc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter-inl.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "7ee9d22a946e9eb8d8e67d17c6661d9054e6914007c1bade9de4ef7d91add542"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/fmt/bundled/base.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "892fcc48f31a80382f0e304e427d68d2fd62a2d78aef142020199120db5269fb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///C:/Users/Husain21/source/repos/Cpp/debugginTactics/src/3rd-party/spdlog/include/spdlog/fmt/bundled/format-inl.h"
+          },
+          "roles": [
+            "resultFile"
+          ],
+          "hashes": {
+            "sha-256": "e7baf108b84e89b29915bb35733540f8f4262cd8f4b41c15754eed4d2f185f61"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/spdlog.h"
+          },
+          "hashes": {
+            "sha-256": "8b878474edf87f03d61da7d18170d809c188db8fd63d48a84b0bb061f6ab82bb"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/common.h"
+          },
+          "hashes": {
+            "sha-256": "031b493c0588405e8721d7b62620947c7fa44fd43733f9502bf1a9964749df69"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/null_mutex.h"
+          },
+          "hashes": {
+            "sha-256": "fc1f6812736ef56df650d2bf4b5a95021d3225549caa7a59d39b47c3cc17f6a7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/tweakme.h"
+          },
+          "hashes": {
+            "sha-256": "8e641df000560090a11adb04eff3f1a18e814f6eb8f2a9a9a1f22c0dcc572f82"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/fmt/fmt.h"
+          },
+          "hashes": {
+            "sha-256": "6fc4048665172d38d835203d757aa30d4136c622d26d26e881f72f96b86aa556"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/common-inl.h"
+          },
+          "hashes": {
+            "sha-256": "bfd668f9b7206bc4517ee8d5807087532bb4cb80482e1c335b9c0c5ed5fa8603"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/registry.h"
+          },
+          "hashes": {
+            "sha-256": "a5ce3c5a8bc019e7d8508268b222136c01f1e81360df67f104f21bf4b49e4f4b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/periodic_worker.h"
+          },
+          "hashes": {
+            "sha-256": "2773bf8766655b9ba5b53c9a84b2abcd4a4f02ec5b55363740668534eaa217cc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/periodic_worker-inl.h"
+          },
+          "hashes": {
+            "sha-256": "72c338426a4cd5f1a387d222a867b575f01f8d1968326f5f30a82ff5071bd681"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/registry-inl.h"
+          },
+          "hashes": {
+            "sha-256": "22a4f626daf4fa47700971d4994b5fca9559249ab9f387148f657ed70476e938"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/logger.h"
+          },
+          "hashes": {
+            "sha-256": "472abbe80dcc3f54497a49021325585a06883d196d20604ba10d3ed4b3fde009"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/backtracer.h"
+          },
+          "hashes": {
+            "sha-256": "d4d613badbe01d67bfaefaba0a7a934f0e5f5eb3f18096e5cba54ab2fd4da883"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/circular_q.h"
+          },
+          "hashes": {
+            "sha-256": "0bc4025c81425023f4d58711d6aa6231a55ee606bb1fc88f4fb3e655e807e265"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/log_msg_buffer.h"
+          },
+          "hashes": {
+            "sha-256": "5a79fdfa5429d23286c58926a53de3ee83b577db21a4cccbd104ceda8ded7c50"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/log_msg.h"
+          },
+          "hashes": {
+            "sha-256": "7e9a3b7b89646cc1ad36d21de8e7d584f81dfa642760c12f40385dc0db65e3b0"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/log_msg-inl.h"
+          },
+          "hashes": {
+            "sha-256": "7ec7033b384263180c041a4ab627cc8081d7550af6a4533f49334af5fce2d4f7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/os.h"
+          },
+          "hashes": {
+            "sha-256": "dc6af3c0fae5b49d8a703f6ef5432f3f25cd061290e81dd0d80441ba5719cf07"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/os-inl.h"
+          },
+          "hashes": {
+            "sha-256": "f32d377e7b58e53b1d601a7e0fef5e2c1d137592c25df3bb4adbf89e015018ef"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/windows_include.h"
+          },
+          "hashes": {
+            "sha-256": "ee78df4fa66a4e41ed97b47305953f9af2140718c5fab14d921ad8b195e9931b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/log_msg_buffer-inl.h"
+          },
+          "hashes": {
+            "sha-256": "e41147aa63dfb99b1b2285a88740d9e7c238099ae3518b2e88798e7e5991932a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/backtracer-inl.h"
+          },
+          "hashes": {
+            "sha-256": "9b2795b78571295776003345d7e2b9f264fa71fabb7a15cda7b049464a2d24c3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/logger-inl.h"
+          },
+          "hashes": {
+            "sha-256": "3383207e7ab09b9fc68f5ea2116bf21070d707165e94597378b63cf415ea361d"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/pattern_formatter.h"
+          },
+          "hashes": {
+            "sha-256": "5e3dd73d840a0c10b0d5cae3b5da28dfd3c20286180641b759db5d3dbc41f585"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/formatter.h"
+          },
+          "hashes": {
+            "sha-256": "213631628274dc6c26fcc9a3bed36a3a9a83edea5e6b9f027baea58ca9c5eff3"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/fmt_helper.h"
+          },
+          "hashes": {
+            "sha-256": "7a2e655f077c1f9ceb7d7a69214594c3721702b691b7a301bad96f0affd45d06"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/mdc.h"
+          },
+          "hashes": {
+            "sha-256": "c3516a85d687f806080d81d0b63cb0353665b26d78f6cdc2c51e526ae9c492d8"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/sinks/sink.h"
+          },
+          "hashes": {
+            "sha-256": "75e5c2b43c253cfe7c553077125e3b158e9d71caf2765ad97bb08443ee83b56a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/sinks/sink-inl.h"
+          },
+          "hashes": {
+            "sha-256": "f8fabf0de532bef4788ad59f278afbd3c4187b598f5c856370cdfa3dd564f28a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/sinks/wincolor_sink.h"
+          },
+          "hashes": {
+            "sha-256": "75a20f219b48c8ff63d2e7a11db9ed748fbc9cef5198e9cf739b889062665aaf"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/console_globals.h"
+          },
+          "hashes": {
+            "sha-256": "3dced73dc2bc5eacc678eec34af6458f910740c8949fd1bc8449808d1345467a"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/sinks/wincolor_sink-inl.h"
+          },
+          "hashes": {
+            "sha-256": "ed4e3f9ed012bf495044e414e1f921311bba888bc905a515da41ddde35c8c557"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/synchronous_factory.h"
+          },
+          "hashes": {
+            "sha-256": "3fcfcc28aa4edc2998e9e00d218362600605b89e0c58ebf2c7267950412e1cdc"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/version.h"
+          },
+          "hashes": {
+            "sha-256": "a0c15d9295eba580732dada20940a443c53ddb47d8565c730d7af1ee5f3bd712"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/spdlog-inl.h"
+          },
+          "hashes": {
+            "sha-256": "eca55774acb8f0cbe05f18cfa95405fd5ff1ed041cd7372556b2eee39776a5ef"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/sinks/rotating_file_sink.h"
+          },
+          "hashes": {
+            "sha-256": "27fa443b8bd9158f4472e116a05fea37e82b6452b6eb70a4ea78ae0089039142"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/file_helper.h"
+          },
+          "hashes": {
+            "sha-256": "e23822a24c9f913328ceed3a7176e832114ec65abccf802bac280852b288415b"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/details/file_helper-inl.h"
+          },
+          "hashes": {
+            "sha-256": "cb74c68b416fd94ef738b12e93af4bb571b69f2bcc3b6987cc7ee0a1fbee0547"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/sinks/base_sink.h"
+          },
+          "hashes": {
+            "sha-256": "86186e0d15535b94270c94ab5eeb798d47dfe7330f4e622bf7c66dc46c820f37"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/sinks/base_sink-inl.h"
+          },
+          "hashes": {
+            "sha-256": "7fe3e5bb453018d03e2b850384b18f8c00a1b64be363bb22c4b9b92082d9bcc7"
+          }
+        },
+        {
+          "location": {
+            "uri": "file:///c:/users/husain21/source/repos/cpp/debuggintactics/src/3rd-party/spdlog/include/spdlog/sinks/rotating_file_sink-inl.h"
+          },
+          "hashes": {
+            "sha-256": "8dc1c0985be041ac2ec0f155b534b748cd44b3eb33e8836dc849f9314c21d13e"
+          }
+        }
+      ]
+    }
+  ]
+}

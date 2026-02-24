@@ -27,6 +27,9 @@
     <ClCompile Include="loggingDebugging.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="integratedDebugger.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="debugWithfunction.h">
@@ -36,6 +39,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="logging.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="integratedDebugger.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
