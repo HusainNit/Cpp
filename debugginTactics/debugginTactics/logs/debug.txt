@@ -1,0 +1,6 @@
+[2026-02-24 14:03:17.765] [program_logger] [debug] loggingDebugging() called
+[2026-02-24 14:03:17.765] [program_logger] [info] Logger initialized with a rolling file!
+[2026-02-24 14:03:17.765] [program_logger] [error] This is an error with a variable: 42
+[2026-02-24 14:05:50.664] [program_logger] [debug] loggingDebugging() called
+[2026-02-24 14:05:50.664] [program_logger] [info] Logger initialized with a rolling file!
+[2026-02-24 14:05:50.664] [program_logger] [error] This is an error with a variable: 42
