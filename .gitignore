@@ -1,1 +1,37 @@
+# --- Visual Studio Junk ---
 .vs/
+*.user
+*.userosscache
+*.sln.docstates
+*.suo
+
+# --- Build Outputs ---
+# These are the folders that contain your .exe and .obj files
+[Dd]ebug/
+[Rr]elease/
+x64/
+x86/
+[Bb]in/
+[Oo]bj/
+
+# --- Intermediate Files ---
+*.pdb
+*.obj
+*.iobj
+*.ipdb
+*.log
+*.tlog
+*.lastbuildstate
+*.idb
+*.ilk
+*.exe
+*.dll
+
+# --- C++ specific (Precompiled Headers / Cache) ---
+ipch/
+*.aps
+*.ncb
+*.opendb
+*.sdf
+*.cache
+*.intermediate.manifest
