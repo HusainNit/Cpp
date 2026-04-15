@@ -10,6 +10,11 @@
 
 #include <print>
 
+
+// submodule:
+// git submodule add https://github.com/gabime/spdlog.git src/3rd-party/spdlog
+// git submodule update --init --recursive
+
 void loggingDebugging() {
 
 	try {
