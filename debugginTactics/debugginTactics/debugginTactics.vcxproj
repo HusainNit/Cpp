@@ -106,7 +106,7 @@
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp23</LanguageStandard>
       <TreatWarningAsError>true</TreatWarningAsError>
-      <AdditionalIncludeDirectories>C:\Users\Husain21\source\repos\Cpp\debugginTactics\src\3rd-party\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\repos\Cpp\debugginTactics\src\3rd-party\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <AdditionalOptions>/utf-8 /w44365 %(AdditionalOptions)</AdditionalOptions>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>
       <TreatAngleIncludeAsExternal>true</TreatAngleIncludeAsExternal>
@@ -125,7 +125,7 @@
       <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp23</LanguageStandard>
-      <AdditionalIncludeDirectories>C:\Users\Husain21\source\repos\Cpp\debugginTactics\src\3rd-party\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\dev\repos\Cpp\debugginTactics\src\3rd-party\spdlog\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <TreatWarningAsError>true</TreatWarningAsError>
       <AdditionalOptions>/utf-8 /w44365 %(AdditionalOptions)</AdditionalOptions>
       <ExternalWarningLevel>Level3</ExternalWarningLevel>

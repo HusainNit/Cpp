@@ -5,7 +5,7 @@
 #include "debugWithfunction.h" //basic - unconditonal
 #include "debuggingUsingPreprocess.h" // mid - conditonal
 #include "logging.h" // high - use log file (record debug, info , warinings, errors, fetal)
-#include "integratedDebugger.h"
+#include "integratedDebugger.h" // high - use integrate debugger for comment debugging
 
 
 int main()
