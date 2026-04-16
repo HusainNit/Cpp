@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="debugginTactics/debugginTactics.vcxproj" Id="890b7142-f692-4c92-b0f4-d70351966d66" />
+</Solution>
