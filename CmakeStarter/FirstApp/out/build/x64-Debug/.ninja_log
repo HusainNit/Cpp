@@ -1,0 +1,7 @@
+# ninja log v6
+13	164	7983907442482848	CMakeFiles/firstapp.dir/src/firstapp.cpp.obj.ddi	67c2de447fda0ea6
+166	209	7983907444269475	CMakeFiles/firstapp.dir/CXX.dd	e758d2346b814e9a
+166	209	7983907444269475	C:/dev/repos/Cpp/CmakeStarter/FirstApp/out/build/x64-Debug/CMakeFiles/firstapp.dir/CXXModules.json	e758d2346b814e9a
+166	209	7983907444269475	CMakeFiles/firstapp.dir/src/firstapp.cpp.obj.modmap	e758d2346b814e9a
+210	966	7983907444427889	CMakeFiles/firstapp.dir/src/firstapp.cpp.obj	a96e0fb182c1d8c1
+967	1703	7983907452004710	firstapp.exe	a84f906c76907e20
