@@ -1,0 +1,12 @@
+cmake_minimum_required(VERSION 3.28)
+
+project(dataTypes)
+
+set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD_REQUIRED  ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
+
+add_executable(dataTypes "src/main.cpp" "src/findSizeOfData.cpp" "src/fixProblems.cpp" "src/scientificNotation.cpp")
+
+target_include_directories(dataTypes PRIVATE "include")
+
