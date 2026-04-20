@@ -1,0 +1,76 @@
+Here's a clean checklist for your home PC from scratch:
+
+---
+
+## Step 1 — Install Visual Studio 2022
+- Download from microsoft.com
+- In the installer, select **"Desktop development with C++"**
+- Make sure these are checked inside that workload:
+  - MSVC compiler tools
+  - Windows 10/11 SDK
+  - CMake tools for Windows
+
+That's it — **no need to install Ninja separately**. Visual Studio installs its own Ninja at `C:\Program Files\Microsoft Visual Studio\2022\Community\Common7\IDE\CommonExtensions\Microsoft\CMake\Ninja\`
+
+---
+
+## Step 2 — Find your exact version numbers
+After installing, check these two folders and note the exact version numbers, as they will differ from this PC:
+
+```
+C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\
+```
+You'll see a folder like `14.44.35207` — **note your number**
+
+```
+C:\Program Files (x86)\Windows Kits\10\Lib\
+```
+You'll see a folder like `10.0.26100.0` — **note your number**
+
+---
+
+## Step 3 — Run these in PowerShell as Administrator
+Replace `14.44.35207` and `10.0.26100.0` with **your actual version numbers** from Step 2:
+
+```powershell
+[System.Environment]::SetEnvironmentVariable("LIB", "C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\um\x64;C:\Program Files (x86)\Windows Kits\10\Lib\10.0.26100.0\ucrt\x64;C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\lib\x64", "Machine")
+
+[System.Environment]::SetEnvironmentVariable("INCLUDE", "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\include;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\ucrt;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\um;C:\Program Files (x86)\Windows Kits\10\Include\10.0.26100.0\shared", "Machine")
+
+[System.Environment]::SetEnvironmentVariable("LIBPATH", "C:\Program Files\Microsoft Visual Studio\2022\Community\VC\Tools\MSVC\14.44.35207\lib\x64", "Machine")
+```
+
+---
+
+## Step 4 — Verify
+Open a new `cmd.exe` and run:
+```cmd
+echo %LIB%
+```
+Should print the actual paths, not `%LIB%`.
+
+---
+
+## Step 5 — Your CMakeSettings.json
+Use this exact config (no changes needed):
+```json
+{
+  "configurations": [
+    {
+      "name": "x64-Debug",
+      "generator": "Ninja",
+      "configurationType": "Debug",
+      "inheritEnvironments": [ "msvc_x64_x64" ],
+      "buildRoot": "${projectDir}\\out\\build\\${name}",
+      "installRoot": "${projectDir}\\out\\install\\${name}",
+      "cmakeCommandArgs": "",
+      "buildCommandArgs": "",
+      "ctestCommandArgs": ""
+    }
+  ]
+}
+```
+
+---
+
+That's everything. The whole issue on this PC was just those missing env vars — your home PC will need the same fix since Visual Studio doesn't set them globally by default.
