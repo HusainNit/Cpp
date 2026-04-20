@@ -1,0 +1,27 @@
+# ninja log v6
+12	108	7983950338214305	CMakeFiles/secondApp.dir/src/ageCheck.cpp.obj.ddi	90a387bf1ceb0695
+109	187	7983950339148829	CMakeFiles/secondApp.dir/src/ageCheck.cpp.obj.modmap	9be31171e06aeaf8
+10	159	7983949998651304	CMakeFiles/secondApp.dir/src/main.cpp.obj.ddi	c68d856b48aea7d
+109	187	7983950339148829	CMakeFiles/secondApp.dir/CXX.dd	9be31171e06aeaf8
+109	187	7983950339148829	C:/dev/repos/Cpp/CmakeStarter/SecondApp/out/build/x64-Debug/CMakeFiles/secondApp.dir/CXXModules.json	9be31171e06aeaf8
+109	187	7983950339148829	CMakeFiles/secondApp.dir/src/main.cpp.obj.modmap	9be31171e06aeaf8
+191	374	7983950340006542	CMakeFiles/secondApp.dir/src/ageCheck.cpp.obj	760319d9f66949ec
+249	1309	7983950001032208	CMakeFiles/secondApp.dir/src/main.cpp.obj	90f6d3ff8c044e26
+375	921	7983950341809153	secondApp.exe	3923fc29ffd91676
+27	145	7983969668292671	CMakeFiles/secondApp.dir/src/ageCheck.cpp.obj.ddi	4cc080b3489f1d76
+17	359	7983969668059334	CMakeFiles/secondApp.dir/src/main.cpp.obj.ddi	de53a25b373c41a1
+391	460	7983969671940299	CMakeFiles/secondApp.dir/CXX.dd	9be31171e06aeaf8
+391	460	7983969671940299	C:/dev/repos/Cpp/CmakeStarter/SecondApp/out/build/x64-Debug/CMakeFiles/secondApp.dir/CXXModules.json	9be31171e06aeaf8
+391	460	7983969671940299	CMakeFiles/secondApp.dir/src/main.cpp.obj.modmap	9be31171e06aeaf8
+391	460	7983969671940299	CMakeFiles/secondApp.dir/src/ageCheck.cpp.obj.modmap	9be31171e06aeaf8
+472	549	7983969672748501	CMakeFiles/secondApp.dir/src/ageCheck.cpp.obj	c008c4eb592f95a6
+110	1801	7983969669095044	_deps/spdlog-build/CMakeFiles/spdlog.dir/src/bundled_fmtlib_format.cpp.obj	30eb8a0f6919a227
+87	2343	7983969668897117	_deps/spdlog-build/CMakeFiles/spdlog.dir/src/async.cpp.obj	b4c0543b5183fc86
+74	2393	7983969668759108	_deps/spdlog-build/CMakeFiles/spdlog.dir/src/file_sinks.cpp.obj	d010128d794dcd59
+98	2456	7983969669012278	_deps/spdlog-build/CMakeFiles/spdlog.dir/src/cfg.cpp.obj	83e0a70ec1f73e19
+63	2609	7983969668667040	_deps/spdlog-build/CMakeFiles/spdlog.dir/src/color_sinks.cpp.obj	e0e0bfd4a468822b
+462	2617	7983969672606453	CMakeFiles/secondApp.dir/src/main.cpp.obj	ce9d523d1b32e01c
+49	2661	7983969668529467	_deps/spdlog-build/CMakeFiles/spdlog.dir/src/stdout_sinks.cpp.obj	d0c0b0ad754fe6ae
+37	3471	7983969668403814	_deps/spdlog-build/CMakeFiles/spdlog.dir/src/spdlog.cpp.obj	1871045b533f9b21
+3472	3797	7983969702710156	_deps/spdlog-build/spdlogd.lib	a90e14c8b4febd3f
+3797	4342	7983969705927171	secondApp.exe	91d591eb1f28f5cc

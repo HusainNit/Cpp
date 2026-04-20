@@ -1,0 +1,31 @@
+cmake_minimum_required(VERSION 3.28)
+
+# this to wake the compiler
+project(secondApp)
+
+
+set(CMAKE_CXX_STANDARD 20) # stander C++20 use
+set(CMAKE_CXX_STANDARD_REQUIRED ON) # make sure to use C++20, and fail other wise
+set(CMAKE_CXX_EXTENSIONS OFF) # use c++ standerd terms and prevent compiler shortcats
+
+include(FetchContent)
+
+set(SPDLOG_INSTALL ON)
+
+FetchContent_Declare(
+	spdlog
+	GIT_REPOSITORY https://github.com/gabime/spdlog.git
+	GIT_TAG v1.17.0
+	SOURCE_DIR "${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/spdlog"
+)
+
+FetchContent_MakeAvailable(spdlog)
+
+# add the files to the IDA looks
+add_executable(secondApp "src/main.cpp"  "include/ageCheck.h" "src/ageCheck.cpp")
+
+# add the files to use with Include
+target_include_directories(secondApp PRIVATE "include") 
+
+# third party lib include
+target_link_libraries(secondApp PRIVATE spdlog::spdlog)
