@@ -1,16 +1,51 @@
 cmake_minimum_required(VERSION 3.28)
 
-# this to wake the compiler
-project(secondApp)
+# make the app portable to other (add c to .exe so it run every where)
+set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Release>:Release>")
 
 
 set(CMAKE_CXX_STANDARD 20) # stander C++20 use
 set(CMAKE_CXX_STANDARD_REQUIRED ON) # make sure to use C++20, and fail other wise
 set(CMAKE_CXX_EXTENSIONS OFF) # use c++ standerd terms and prevent compiler shortcats
 
+#! ! ! ! ! ! !
+#set this to ON instead of OFF to ship the game!
+#basically this will change the RESOURCES_PATH to be the local path
+#! ! ! ! ! ! !
+set(PRODUCTION_BUILD OFF CACHE BOOL "Make this a production build" FORCE)
+#delete the out folder after changing if visual studio doesn recognize the change!
+
+#may give problems on linux
+if(PRODUCTION_BUILD)
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE) #link time optimization
+else()
+set(CMAKE_INTERPROCEDURAL_OPTIMIZATION FALSE)
+endif()
+
+
+if(MSVC) 
+add_compile_options(/arch:AVX2) #make sure SIMD optimizations take place
+endif()
+
+if(MSVC) # If using the VS compiler...
+
+	target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC _CRT_SECURE_NO_WARNINGS)
+
+	set_target_properties("${CMAKE_PROJECT_NAME}" PROPERTIES LINK_FLAGS "/SUBSYSTEM:WINDOWS /ENTRY:mainCRTStartup") #no console
+	
+	#set_property(TARGET "${CMAKE_PROJECT_NAME}" PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreadedDebug<$<CONFIG:Debug>:Debug>")
+	#set_property(TARGET "${CMAKE_PROJECT_NAME}" PROPERTY MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Release>:Release>")
+
+endif()
+
+
+# this to wake the compiler
+project(secondApp)
+
 include(FetchContent)
 
-set(SPDLOG_INSTALL ON)
+# set(SPDLOG_INSTALL ON) extream and dont need to it in most of the times
 
 FetchContent_Declare(
 	spdlog
@@ -21,11 +56,19 @@ FetchContent_Declare(
 
 FetchContent_MakeAvailable(spdlog)
 
-# add the files to the IDA looks
-add_executable(secondApp "src/main.cpp"  "include/ageCheck.h" "src/ageCheck.cpp")
+
+# link all the cpp project dynamicaly
+file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
+
+# add the files to the IDA looks, use the glope in top
+add_executable(secondApp "${MY_SOURCES}")
+
+# if we have folder have the resources(player data, art ..etc) we can use the RESOURCES_PATH macro to access these files (to make read and write to file easier)
+target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC RESOURCES_PATH="${CMAKE_CURRENT_SOURCE_DIR}/resources/") # This is useful to get an ASSETS_PATH in your IDE during development but you should comment this if you compile a release version and uncomment the next line
+#target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC RESOURCES_PATH="./resources/") # Uncomment this line to setup the ASSETS_PATH macro to the final assets directory when you share the project (production or for others)
 
 # add the files to use with Include
-target_include_directories(secondApp PRIVATE "include") 
+target_include_directories(secondApp PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/include/") 
 
-# third party lib include
+# third party lib include (make sure to use the :: with the alias , and if you have local one add alias to it)
 target_link_libraries(secondApp PRIVATE spdlog::spdlog)
