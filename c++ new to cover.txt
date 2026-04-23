@@ -9,3 +9,5 @@ Concepts
 Ranges
 
 vcpkg
+
+target_precompile_headers(secondApp PRIVATE <vector> <string>)
