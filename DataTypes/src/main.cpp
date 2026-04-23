@@ -1,6 +1,11 @@
 #include "findSizeOfData.h"
 #include "fixProblems.h"
 #include "scientificNotation.h"
+#include "floatNums.h"
+#include "boolean.h"
+#include "ifStatment.h"
+#include "charDT.h"
+#include "typeCasting.h"
 
 int main() {
 	/* 
@@ -9,7 +14,12 @@ int main() {
 
 	//findSizeOfData();
 	//fixProblems();
-	scientificNotation();
+	//scientificNotation();
+	//floatNums();
+	//booleanDY();
+	//ifStatment();
+	//charDT();
+	typecasting();
 
 	return 0;
 }

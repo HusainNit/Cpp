@@ -24,7 +24,7 @@ void findSizeOfData()
 
     std::cout << std::setw(16) << "float:" << sizeof(float) << " bytes\n";                  //4
     std::cout << std::setw(16) << "double:" << sizeof(double) << " bytes\n";                //8
-    std::cout << std::setw(16) << "long double:" << sizeof(long double) << " bytes\n";      //8 - 12 - 16
+    std::cout << std::setw(16) << "long double:" << sizeof(long double) << " bytes\n";      //8 - 12 - 16 [avoid useing]
 
     std::cout << std::setw(16) << "char:" << sizeof(char) << " bytes\n";                    //1
     std::cout << std::setw(16) << "wchar_t:" << sizeof(wchar_t) << " bytes\n";              //2 - 4
