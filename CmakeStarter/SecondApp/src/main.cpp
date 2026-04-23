@@ -1,6 +1,7 @@
 #include "ageCheck.h"
 #include <iostream>
-#include "spdlog/spdlog.h"
+#include <spdlog/spdlog.h>
+#include "logUse.h"
 
 int main() {
 	spdlog::info("Application started! Checking age...");
@@ -15,6 +16,10 @@ int main() {
 	else {
 		std::cout << "your under age, see you next time";
 	}
+
+	logUse();
+
+	
 
 	return 0;
 }
