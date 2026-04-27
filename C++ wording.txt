@@ -1,0 +1,5 @@
+integral type (represnedted as numbers) - will save data as ASCII 
+
+Literal constants are constant values that are not associated with an identifier.
+
+suffixes 
