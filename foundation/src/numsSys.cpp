@@ -1,5 +1,6 @@
-#include <iostream>
-#include <bitset>  // binary display
+ï»¿#include <iostream>
+#include <bitset>	// binary display
+#include <format>	// c++20 display
 #include "numsSys.h"
 
 void numsSys() {
@@ -13,9 +14,11 @@ void numsSys() {
 	/*
 		For how computers work (foundations):
 
-		- Computer Systems: A Programmer's Perspective (Bryant & O'Hallaron) — the gold standard book for C/C++ programmers. Covers bits, memory, the OS, everything.
-		- Code by Charles Petzold — more beginner-friendly, builds up from transistors to software.
-		- nand2tetris.org — free course that builds a computer from scratch.
+		- Computer Systems: A Programmer's Perspective (Bryant & O'Hallaron) â€” the gold standard book for C/C++ programmers. Covers bits, memory, the OS, everything.
+		- Code: The Hidden Language of Computer Hardware and Software by Charles Petzold â€” more beginner-friendly, builds up from transistors to software.
+		- nand2tetris.org â€” free course that builds a computer from scratch.
+		- https://www.youtube.com/@BenEater/videos
+		- https://www.youtube.com/@Computerphile/videos
 
 
 	
@@ -23,7 +26,7 @@ void numsSys() {
 		Audio/PCM Wave		files,sampling							libsndfile, PortAudio, write a .wav parser
 		DSP/FFT				Fourier transformsFFTW					library, or roll your own DFT in C++
 		Images				BMP first (simplest),then JPEG/PNG		stb_image.h (single header!), OpenCV
-		VideoCodecs			muxing, containers						FFmpeg (the standard — massive but powerful)
+		VideoCodecs			muxing, containers						FFmpeg (the standard â€” massive but powerful)
 	*/
 
 
@@ -60,13 +63,16 @@ void numsSys() {
 
 
 	// all these will print in decimal
-	std::cout << "print in decimal : ";
+	std::cout << "print in decimal : \n ";
 	std::cout << hex << " = 0xF \n" << dec << " = 12 \n" << bin << " = 0b0001\'0010\n";
 
 	// print for each type
-	std::cout << "print in in each : ";
+	std::cout << "\n print in in each : \n ";
 	
 	std::cout << "hex: " << std::hex << hex <<'\n';
 	std::cout << "dec(defult) : " << std::dec<< dec << '\n'; // we used std::dec to change the output steram
 	std::cout << "binary: " << std::bitset<8>(bin) << '\n';  //disaply 8 places as 1 byte
+
+	// using c++20 format 
+	std::cout << "\n using format:\n" << std::format("{:b},{:#b}", 0b1010,0b1010);
 }
