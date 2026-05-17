@@ -51,4 +51,16 @@ void optimzation() {
 			4. static_assert 
 		*/
 
+
+	/* For a variable itself to be a compile-time constant expression, it must meet two rules:
+
+			1. It must be a const integral type.
+			2. must the operation applied to same data type.
+			3. Its initializer must also be a constant expression.
+	*/
+
+	/* constant types:
+		literals: 'c' , 5 ,4.15
+		intergral: whole nums (int,char, bool,long), double and float is not constant
+	*/
 }
