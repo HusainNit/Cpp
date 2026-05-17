@@ -1,4 +1,4 @@
-#include "optimization.h"
+ï»¿#include "optimization.h"
 
 void optimzation() {
 	// optimzation is to make programs runs more efficiently
@@ -14,7 +14,7 @@ void optimzation() {
 
 			Constant propagation:	varibles that have constant value it will need TWO memory request, so it will replace use of value of constant varible in each place we use the								varible (int x { 7 }; int y{ 3 };std::cout << x + y << '\n';	  ->	so in compile it will just do 7 + 3 > 10 and then run it at runTime which								will not use CPU
 
-			Dead code elimination:	compiler removes code that may be executed but has no effect on the program’s behavior. (	[remove x] int x { 7 };   std::cout << 7 << '\n';)								(optimzed out) 
+			Dead code elimination:	compiler removes code that may be executed but has no effect on the programâ€™s behavior. (	[remove x] int x { 7 };   std::cout << 7 << '\n';)								(optimzed out) 
 		*/
 		
 
@@ -30,7 +30,7 @@ void optimzation() {
 	// compile time programming: make some part of codes to to execute at compile time
 		// improve are of compile time execution:
 			/*
-				Performance:					makes our programs smaller and faster, The more code we can ensure is capable of evaluating at compile-time, the more performance benefit									we’ll see.
+				Performance:					makes our programs smaller and faster, The more code we can ensure is capable of evaluating at compile-time, the more performance benefit									weâ€™ll see.
 			 
 				Versatility:					If it's marked as a compile-time constant, it stays a compile-time constant. If it's not, it will be optimzed or not by the compiler to									be either compile-time or excute-time
 			 
@@ -52,7 +52,7 @@ void optimzation() {
 		*/
 
 
-	/* For a variable itself to be a compile-time constant expression, it must meet two rules:
+	/* For a variable itself to be a compile-time constant expression, it must meet three rules:
 
 			1. It must be a const integral type.
 			2. must the operation applied to same data type.
