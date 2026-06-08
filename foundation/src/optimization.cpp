@@ -63,4 +63,14 @@ void optimzation() {
 		literals: 'c' , 5 ,4.15
 		intergral: whole nums (int,char, bool,long), double and float is not constant
 	*/
+
+	// c++ consttant identifier:
+		/*
+			1. const		: runs in runtime (read varible only cant modify), can be compile time with constant experssion like 10, 2, ..etc'
+
+			2. constexpr	: can run in compile time if every call/parameter is constexper, if not it go to runtime
+
+			3. consteval	: must be compile time other then , raise error
+	
+		*/
 }

@@ -5,13 +5,30 @@
 
 // To be eligible for compile-time execution, all arguments must be constant expressions
 
-// constexper must be fully definde for varible call (cant do forward call)
+// constexper must be fully definde for varible call (cant do forward call), if used in multi files define it all in the header file
 
 // constexpr functions: 
 	// cant have I\O operation inside it (cout/cin)
 	// chain effect: constexpr function can call other functions, but it must the other also constexpr as will
 	// we can make constexper runtime, by using it in output operation(cout) and have not const arugments
 	// both way of compilation made possible to serve both runtimes, and dont have to create 2 same behave functions
+	// to make the function compile-time, all the arguments/calles must be const as will
+
+// constexper func calles not constexper
+	// we need the trick(compile-time loophole) to give it one way for compile-time gurenteed: if (var < 0) return 0; , which is return statment
+		/*
+			constexpr int my_function(int x, bool compile_time_mode) {
+				if (compile_time_mode) return 1; // The compile-time loophole!
+
+				return runtime_only_function(x);
+			}
+
+			constexpr int foo(int x){
+				if (x < 0) return 0; // needed prior to adoption of P2448R1 in C++23 (see note below)
+				return getValue(x);  // call to non-constexpr function here
+			}
+		*/
+
 
 
 constexpr double calccirclecumfer(double redius) {
