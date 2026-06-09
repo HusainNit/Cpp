@@ -23,12 +23,12 @@ void bits(){
 	/*
 		bitset provise couble of functions to do the mainplations
 
-		idx: the index of the bit 
+			idx: the index of the bit 
 
-		test(idx):	check if it 1 or 0
-		set(idx):	trun the bit to 1 "on", do noting is alrady is 1
-		rest(idx):	turn the bit to 0 "off", do noting is alrady is 0
-		flip(idx):	invert the bit 1 to 0 or vice versa
+			test(idx):	check if it 1 or 0
+			set(idx):	trun the bit to 1 "on", do noting is alrady is 1
+			rest(idx):	turn the bit to 0 "off", do noting is alrady is 0
+			flip(idx):	invert the bit 1 to 0 or vice versa
 	*/
 
 	bits.set(4);
@@ -40,4 +40,22 @@ void bits(){
 
 	std::cout <<  std::format("\n{}{:d}", "converit it to decimal:", bits.to_ulong());
 
+
+	/*
+		querying bitset
+
+			size():		return number of the bits
+			count():	return the number of bits is 1(on/true)
+			all():		return false/true if all is 1
+			any():		return boolean if any one is 1
+			none():		return bollean if there is no 1
+	*/
+
+	std::cout << "\n" << bits.size() << "bits are in the bitset: " << bits << "\n";
+	std::cout << bits.count() << " bits are set to true: " << bits << "\n";
+
+	std::cout << std::boolalpha; // print the bollean flag
+	std::cout << "All bits are true: " << bits.all() << '\n';
+	std::cout << "Some bits are true: " << bits.any() << '\n';
+	std::cout << "No bits are true: " << bits.none() << '\n';
 }

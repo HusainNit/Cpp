@@ -9,13 +9,13 @@ int main() {
 
 	//numsSys();
 
-	//bits();
+	bits();
 
-	varible_constexpr();
+	//varible_constexpr();
 
 	//func_constexpre();
 
-	func_consteval();
+	//func_consteval();
 
 	return 0;
 }
