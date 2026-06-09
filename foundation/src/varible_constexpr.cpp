@@ -14,6 +14,6 @@ void varible_constexpr() {
 
 	// constexpr (constant expression): always a compile-time constant
 
-	//constexpr int age{ 23 };	comment to stop error
+	[[maybe_unused]]constexpr int age{ 23 };	
 
 }
