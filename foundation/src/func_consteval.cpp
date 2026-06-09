@@ -1,8 +1,9 @@
 #include "func_consteval.h"
 #include <iostream>
-#define CONSTEVAL(...) []() consteval { return __VA_ARGS__; }()  // foce constexper to be compile time(c++ 20 impleamtaion of lampda)
 
 // consteval must be compile time
+
+consteval auto CONSTEVAL(auto val) { return val; }; // better approach and cleaner
 
 consteval int greatest(int x, int y, int z = 15) {
 	// king of the hill appraoch
