@@ -17,3 +17,5 @@ x86/
 
 # Visual Studio 2015/2017/2019/2022 cache and project info
 .vs/
+
+src/
