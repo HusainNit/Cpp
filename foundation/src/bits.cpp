@@ -18,7 +18,9 @@ void bits(){
 
 	// bit flag: when singil bit of 1 full object used as boolean value
 	std::bitset<8> bits{ 0b0000'0101 };
-	std::cout << std::format("{}{:08b}", "origoanl format:", bits.to_ulong());
+	std::cout << std::format("{}{:08b}", "origoanl format:", bits.to_ulong()); // to_ulog not working here cuse of the {:08b} 
+	std::cout << "\ninteger value: " << bits.to_ulong(); // to_ulong will make the bits to the unsigen long
+	std::cout << "\n\n";
 
 	/*
 		bitset provise couble of functions to do the mainplations
@@ -38,7 +40,8 @@ void bits(){
 	bits.flip(7);
 	std::cout << std::format("\n{}{:08b}", "change 8th bit:", bits.to_ulong());
 
-	std::cout <<  std::format("\n{}{:d}", "converit it to decimal:", bits.to_ulong());
+	std::cout <<  std::format("\n{}{:d}", "converit it to decimal:", bits.to_ulong()); // sely one as it can be done with to_ulong()
+	std::cout << "\n\n";
 
 
 	/*
@@ -58,4 +61,61 @@ void bits(){
 	std::cout << "All bits are true: " << bits.all() << '\n';
 	std::cout << "Some bits are true: " << bits.any() << '\n';
 	std::cout << "No bits are true: " << bits.none() << '\n';
+	std::cout << "\n\n";
+
+
+	/*
+		bit manipulation (bitwise) -> use it with unsigned integral, and they dont affect the origonal data
+
+			left shift:		<<	, X<<n		take the bits of x and shift them to the left by n poitions
+			right shift:	>>	, X>>n		take the bits of x and shift them to the right by n poitions
+
+			bitwise AND:	&	, X&Y		set bits to 1 when both the idx of bit in x and y is 1
+			bitwise OR:		|	, X|Y		set bits to 1 when both the idx of bit in x and y not 1
+
+			bitwise NOT:	~	, ~X		flip each bits in x
+			bitwise XOR:	^	, X^Y		set the bit to 1 when x bit at idx diffrent from y bit at idx
+
+
+			to use the one with assigne we can add =:
+
+				<<=
+				>>=
+				&=
+				|=
+				^=
+
+				note there is no ~=, we can use x= ~x
+	*/
+
+	// normal object size is 2 bytes == 16 bits
+	std::bitset<16> bitwiseset{ 0b0010'0000'1111'1010 };
+
+	std::cout << "normal bit set: " << bitwiseset;
+	std::cout << "\ninteger value: " << bitwiseset.to_ulong();
+
+	//left shift -> add n 0 to the left and push to left other nums, in end of size they dissapres ( integer make bigger value = multipy by 2 )
+	std::cout << "\nleft shit by 4: " << (bitwiseset << 4);
+	
+	// right shit -> add n 0s to the right and push the 1s to right, in end 1 lost if they get out ( integer make smaller value = divide by 2[drop the decimal] )
+	std::cout << "\nright shit by 4: " << (bitwiseset >> 4);
+
+	
+	// bitwise not
+	std::bitset<16> notbitwiseset{ ~bitwiseset };
+	std::cout << "\nbitwise Not: " << (notbitwiseset);
+	std::cout << "\ninteger value: " << notbitwiseset.to_ulong();
+
+	// bitwise AND
+	std::cout << "\nbitwise And: " << (bitwiseset & notbitwiseset );
+
+
+	// bitwise or
+	std::cout << "\nbitwise OR: " << (bitwiseset | notbitwiseset);
+
+
+	//bitwise XOR 
+	std::cout << "\nbitwise XOR: " << (bitwiseset ^ bitwiseset);
+
+	std::cout << "\n\n";
 }
