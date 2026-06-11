@@ -1,7 +1,8 @@
-#include "bits.h"
+﻿#include "bits.h"
 #include <bitset>  // behave in index, start from right to left (little-endian)
 #include <format>
-#include <iostream>
+#include <iostream> // have inside it the #include <cstdint> or unit8_t , its better to include it also
+#include <cstdint>
 
 // lst file exercise
 std::bitset<4> rotl(std::bitset<4> bits) { // can be done just with "return (bits << 1) | (bits >> 3);"
@@ -146,5 +147,44 @@ void bits(){
 
 	std::bitset<4> bits2{ 0b1001 };
 	std::cout << "orional:" << bits2 << " = rotated 1 bit:" << rotl(bits2) << '\n';
+
+	/*
+		bit masks: best way to turn the bit on or off with index
+			bit mask blocks the bitwise operators from touching bits we don’t want modified, and allows access to the ones we do want modified
+	*/
+
+	// first we define the bit we need to modify
+	constexpr std::uint8_t mask1{ 0b0000'0010 };
+	constexpr std::uint8_t mask5{ 0b0010'0000 };
+	constexpr std::uint8_t mask7{ 1<<7 }; // esier way
+
+	// the one we need to change
+	std::uint8_t flags{ 0b0010'1100 };
+
+	// no we check the bit location in the mask to the one in flag(chek it poision of 1 in masx is on or off in the flag)
+	std::cout << "bit 1 is " << (static_cast<bool>(flags & mask1) ? "on\n" : "off\n");
+	std::cout << "bit 5 is " << (static_cast<bool>(flags & mask5) ? "on\n" : "off\n");
+	std::cout << "bit 7 is " << (static_cast<bool>(flags & mask7) ? "on\n" : "off\n");
+
+	// to set it (make it on)
+	flags |= mask1; // turn on bit 1		//flags |= (mask4 | mask5); // turn bits 4 and 5 on at the same time
+
+	// check the change
+	std::cout << "bit 1 is " << (static_cast<bool>(flags & mask1) ? "on\n" : "off\n");
+
+	// to rest it (make it off)
+	flags &= ~mask5;				// flags &= ~(mask4 | mask5); // turn bits 4 and 5 off at the same time
+
+	// check the change
+	std::cout << "bit 5 is " << (static_cast<bool>(flags & mask5) ? "on\n" : "off\n");  
+
+	// to flip (set to 1 or 0 debend in the origonal)
+	flags ^= mask7;				//flags ^= (mask4 | mask5);  flip bits 4 and 5 at the same time
+
+	// check again
+	std::cout << "bit 7 is " << (static_cast<bool>(flags & mask7) ? "on\n" : "off\n");
+
+
+
 
 }
