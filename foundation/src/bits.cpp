@@ -296,6 +296,10 @@ void bits(){
 
 
 		system know to represnt it as sign or unsign by the type (int,long / uint)
+
+		 for float representation : https://tfinley.net/csarch-notes/2000/floating
+
+		 and this file is big: need to be seperate out of this folder foundation to other like bitsLevel and rename this for the const
 	*/
 		
 }
