@@ -185,6 +185,34 @@ void bits(){
 	std::cout << "bit 7 is " << (static_cast<bool>(flags & mask7) ? "on\n" : "off\n");
 
 
+	std::cout << "\n\n";
+
+
+
+	[[maybe_unused]] constexpr std::bitset<8> nmask0{ 0b0000'0001 }; // represents bit 0
+	[[maybe_unused]] constexpr std::bitset<8> nmask1{ 0b0000'0010 }; // represents bit 1
+	[[maybe_unused]] constexpr std::bitset<8> nmask2{ 0b0000'0100 }; // represents bit 2
+	[[maybe_unused]] constexpr std::bitset<8> nmask3{ 0b0000'1000 }; // represents bit 3
+	[[maybe_unused]] constexpr std::bitset<8> nmask4{ 0b0001'0000 }; // represents bit 4
+	[[maybe_unused]] constexpr std::bitset<8> nmask5{ 0b0010'0000 }; // represents bit 5
+	[[maybe_unused]] constexpr std::bitset<8> nmask6{ 0b0100'0000 }; // represents bit 6
+	[[maybe_unused]] constexpr std::bitset<8> nmask7{ 0b1000'0000 }; // represents bit 7
+
+	std::bitset<8> nflags{ 0b0000'0101 }; // 8 bits in size means room for 8 flags
+	std::cout << "bit 1 is " << (nflags.test(1) ? "on\n" : "off\n");
+	std::cout << "bit 2 is " << (nflags.test(2) ? "on\n" : "off\n");
+
+	nflags ^= (nmask1 | nmask2);
+	std::cout << "bit 1 is " << (nflags.test(1) ? "on\n" : "off\n");
+	std::cout << "bit 2 is " << (nflags.test(2) ? "on\n" : "off\n");
+
+	nflags |= (nmask1 | nmask2);// turn bits 1 and 2 on
+	std::cout << "bit 1 is " << (nflags.test(1) ? "on\n" : "off\n");
+	std::cout << "bit 2 is " << (nflags.test(2) ? "on\n" : "off\n");
+
+	nflags &= ~(nmask1 | nmask2);// turn bits 1 and 2 off
+	std::cout << "bit 1 is " << (nflags.test(1) ? "on\n" : "off\n");
+	std::cout << "bit 2 is " << (nflags.test(2) ? "on\n" : "off\n");
 
 
 }
