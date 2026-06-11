@@ -1,7 +1,15 @@
 #include "bits.h"
-#include <bitset>
+#include <bitset>  // behave in index, start from right to left (little-endian)
 #include <format>
 #include <iostream>
+
+// lst file exercise
+std::bitset<4> rotl(std::bitset<4> bits) { // can be done just with "return (bits << 1) | (bits >> 3);"
+	bool left_bit{ bits.test(3) };
+	bits <<= 1;
+	bits.set(0, left_bit);
+	return bits;
+}
 
 void bits(){
 	/*
@@ -16,7 +24,21 @@ void bits(){
 
 
 
-	// bit flag: when singil bit of 1 full object used as boolean value
+	// bit flag: when single bit of 1 , full object used as boolean value(array of flags??) optimzation?
+
+	// < > is Template arugments 
+		/*
+			 non type arugemnt: <4>,   fixed value -> tell the compile the size of the object(varible)
+
+			 type arugment: <std::uint8_t>, casting logic -> tell the compile to cast oject to spesefic type
+				
+
+			 why not ()?
+				- < > for compile time 
+				- ( ) for run time  
+		*/
+
+
 	std::bitset<8> bits{ 0b0000'0101 };
 	std::cout << std::format("{}{:08b}", "origoanl format:", bits.to_ulong()); // to_ulog not working here cuse of the {:08b} 
 	std::cout << "\ninteger value: " << bits.to_ulong(); // to_ulong will make the bits to the unsigen long
@@ -67,13 +89,13 @@ void bits(){
 	/*
 		bit manipulation (bitwise) -> use it with unsigned integral, and they dont affect the origonal data
 
-			left shift:		<<	, X<<n		take the bits of x and shift them to the left by n poitions
+			left shift:		<<	, X<<n		take the bits of x and shift them to the left by n poitions		(width-sensitive, integral promotion issue[ cpu conver size to defult 2,4,...] use static_cast to preserve the small operation or better dont use small bit sizes )
 			right shift:	>>	, X>>n		take the bits of x and shift them to the right by n poitions
 
 			bitwise AND:	&	, X&Y		set bits to 1 when both the idx of bit in x and y is 1
 			bitwise OR:		|	, X|Y		set bits to 1 when both the idx of bit in x and y not 1
 
-			bitwise NOT:	~	, ~X		flip each bits in x
+			bitwise NOT:	~	, ~X		flip each bits in x												(width-sensitive, integral promotion issue)
 			bitwise XOR:	^	, X^Y		set the bit to 1 when x bit at idx diffrent from y bit at idx
 
 
@@ -118,4 +140,11 @@ void bits(){
 	std::cout << "\nbitwise XOR: " << (bitwiseset ^ bitwiseset);
 
 	std::cout << "\n\n";
+		
+	std::bitset<4> bits1{ 0b0001 };
+	std::cout <<"orional:"<< bits1 << " = rotated 1 bit:" << rotl(bits1) << '\n';
+
+	std::bitset<4> bits2{ 0b1001 };
+	std::cout << "orional:" << bits2 << " = rotated 1 bit:" << rotl(bits2) << '\n';
+
 }
