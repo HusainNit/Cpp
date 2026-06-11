@@ -254,4 +254,21 @@ void bits(){
 
 	// using color with bits
 	colors();
+
+
+	/*
+		converting values
+
+		binary -> dec
+		binaray:	0		0		0		0			0		0		0		0			0	0	0	0		0	0	0	0
+		dec(*):		32,768	16,384	8,192	4,096		2,048	1,024	512		256			128	64	32	16		8	4	2	1   total for 16bits =65,536
+
+		dec -> binary
+		divide by 2, and the the remider will construct the binary(from bottom to top) best for humn but mid for machines
+
+
+		addition
+
+	*/
+		
 }
