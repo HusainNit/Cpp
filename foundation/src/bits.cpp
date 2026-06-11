@@ -214,5 +214,12 @@ void bits(){
 	std::cout << "bit 1 is " << (nflags.test(1) ? "on\n" : "off\n");
 	std::cout << "bit 2 is " << (nflags.test(2) ? "on\n" : "off\n");
 
+	/*
+		reasion of using bit mask:
+			- bit flags is more optimzed when we have to track like 100 flag for like 200 persion(game logic of village)
+
+			- Imagine you had a function that could take any combination of 32 different options. One way to write that function would be to use 32 individual Boolean parameters (void someFunction(std::bitset<32> options);)  someFunction(option10 | option32);
+	*/
+
 
 }
