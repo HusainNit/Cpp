@@ -1,0 +1,94 @@
+cmake_minimum_required(VERSION 3.28)
+
+# this to wake the compiler
+project(media)
+
+# make the app portable to other (add c to .exe so it run every where)
+set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+
+
+set(CMAKE_CXX_STANDARD 20) # stander C++20 use
+set(CMAKE_CXX_STANDARD_REQUIRED ON) # make sure to use C++20, and fail other wise
+set(CMAKE_CXX_EXTENSIONS OFF) # use c++ standerd terms and prevent compiler shortcats
+
+
+
+
+# link all the cpp project dynamicaly
+file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
+
+# add the files to the IDA looks, use the glope in top - ${PROJECT_NAME} can be better sometimes
+add_executable(${PROJECT_NAME} "${MY_SOURCES}")
+
+
+# add the files to use with Include
+target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/include/")
+
+
+
+# Organizing the Files Tree structure
+set_property(GLOBAL PROPERTY USE_FOLDERS ON)
+source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}/src" PREFIX "Source Files" FILES ${MY_SOURCES})
+
+
+# compiler to compile heavy headers one time in bolb if not changed - ${PROJECT_NAME} can be better sometimes
+target_precompile_headers(${PROJECT_NAME} PRIVATE
+    <vector>
+    <string>
+    <memory>
+)
+
+
+if(MSVC)  # If using the VS compiler...
+
+    # 1. Rules for YOUR code
+    target_compile_options(${PROJECT_NAME} PRIVATE 
+        /W4      # Warning Level 4
+        /WX      # Treat warnings as errors
+        /sdl     # Enable Security Development Lifecycle checks
+    )
+
+    # 2. Rules for THIRD PARTY (External) code
+    target_compile_options(${PROJECT_NAME} PRIVATE 
+        /external:W3            # Treat external headers as Level 3
+        /external:anglebrackets # Treat everything in < > as external
+    )
+
+
+    #make sure SIMD optimizations take place
+    add_compile_options(/arch:AVX2) 
+
+    # make it multy processer compile
+    target_compile_options(${PROJECT_NAME} PRIVATE /MP)
+
+
+
+    # Enable faster Debug builds and better "Edit and Continue"
+    target_compile_options(${PROJECT_NAME} PRIVATE /Zi) 
+
+    # Better Debug Info Format
+    target_compile_options(${PROJECT_NAME} PRIVATE /Zc:inline)
+    
+    # Improve the "Auto" window in VS - helps the debugger see variables better
+    target_compile_options(${PROJECT_NAME} PRIVATE $<$<CONFIG:Debug>:/Od>) # Only for Debug
+
+
+
+    # Enable "Standards Conformance"
+    target_compile_options(${PROJECT_NAME} PRIVATE /permissive-)
+
+
+    # Enable Incremental Linking for faster "Edit and Continue"  - INCREMENTAL
+    # Build Speed: "Fast Link"  - DEBUG:FASTLINK
+    set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_DEBUG "/INCREMENTAL /DEBUG:FASTLINK")
+
+
+    # define a preprocessor macro when building your target.
+	target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC _CRT_SECURE_NO_WARNINGS)
+
+    # The "UTF-8" Fix
+    target_compile_options(${PROJECT_NAME} PRIVATE /utf-8)
+
+
+endif()
+
