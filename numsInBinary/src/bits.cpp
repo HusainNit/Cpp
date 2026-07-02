@@ -298,6 +298,14 @@ void bits(){
 		system know to represnt it as sign or unsign by the type (int,long / uint)
 
 		 for float representation : https://tfinley.net/csarch-notes/2000/floating
+		 for practice decimals:https://bagofcows.com/binary/
+		 for praticing float: https://www.h-schmidt.net/
+		 string practisong:
+			1. ASCII: https://www.ascii-code.com/ , https://learn.sparkfun.com/tutorials/ascii/all
+			2. UTF-8 with signaters:  https://testsigma.com/free-tools/utf8-decode   , https://onlinetools.com/utf8/validate-utf8 , https://www.tsmean.com/articles/encoding/unicode-and-utf-8-tutorial-for-dummies/
+			3. BOM: https://betterexplained.com/articles/understanding-big-and-little-endian-byte-order/  ,  https://www.w3.org/International/questions/qa-byte-order-mark , 
+			4. sound: https://it.uw.edu//wp-content/uploads/2013/09/DigitalAudioBasics.pdf , https://ciechanow.ski/sound/ , https://wiki.xiph.org/Videos/Digital_Show_and_Tell
+			5. video: https://scratchapixel.com/ , https://workflow.frame.io/guide/ , https://github.com/leandromoreira/digital_video_introduction , 
 
 		 and this file is big: need to be seperate out of this folder foundation to other like bitsLevel and rename this for the const
 	*/

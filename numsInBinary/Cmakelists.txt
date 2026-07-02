@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.28)
 
 # this to wake the compiler
-project(constant)
+project(numsInBinary)
 
 # make the app portable to other (add c to .exe so it run every where)
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
