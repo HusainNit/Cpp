@@ -64,19 +64,45 @@ void floatConverison() {
 
 			sign = 1
 
-			exponnext:
+			exponent:
 				rela num = store exponents - bias    
 						 = 129 - 127
 						 = 2 
 
 						2^[real num] = 2^2
 
-				finding the bies:
+				finding the bias:
 					2^(k-1) -1   where k is the number of the bits in the exponents
 
 					8 (IEEE single)		==	 2^7 − 1 = 127
 					11 (IEEE double)	==	 2^10 − 1 = 1023
-	
+
+
+			mantissa: 01101000000000000000000
+
+			hidden bit(IEEE assumtion) + mantissa = 1.01101			<- floating point num
+
+			sign + floating num = -1.01101							<- signed floating point num
+
+			signed float num + exponent = -1.01101 × 2^2
+
+			decimal converison:
+				fraction part)after the point):
+					.01101
+						1. 0 x 2^(-1) = 0
+						2. 1 x 2^(-2) = 0.25
+						3. 1 x 2^(-3) = 0.125
+						4. 0 x 2^(-4) = 0
+						5. 1 x 2^(-5) = 0.03125
+
+				addition:
+					1 + 0 + 0.25 + 0.125 + 0 + 0.03125 = 1.40625
+
+				multiply by exponent:
+					exponent = 2^2 = 4
+					1.40625 x 4 = 5.625
+
+				add the sign = - 5.625
 	*/
 
 
