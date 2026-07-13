@@ -84,7 +84,11 @@ void floatConverison() {
 
 			sign + floating num = -1.01101							<- signed floating point num
 
-			signed float num + exponent = -1.01101 × 2^2
+			Normalized IEEE 754 value:
+			-1.01101 × 2²
+
+			Binary value (after applying the exponent):
+			-101.101₂
 
 			decimal converison:
 				fraction part)after the point):
@@ -103,6 +107,9 @@ void floatConverison() {
 					1.40625 x 4 = 5.625
 
 				add the sign = - 5.625
+
+				Decimal value:
+				-5.625₁₀
 	*/
 
 
