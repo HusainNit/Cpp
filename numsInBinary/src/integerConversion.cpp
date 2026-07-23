@@ -78,7 +78,7 @@ void integerConversion() {
 
 
 				multiply:
-					multiply not same && operations
+					multiply not same the && operations
 
 					rules:
 						0 × 0 = 0
@@ -151,6 +151,33 @@ void integerConversion() {
 								- we represent all with there (*) value in dec, and last one (sign) will have signe		-128 + 64 + 32 + 16 + 8 + (4*0) + 2 + 1 = -5
 
 
+
+
+
+
+			operations in two 2s complemnts:
+
+				addition:
+					we do it in int first, then converit it to binary
+
+
+				subtractions:
+					1)	we do it in int first, then converit it to binary
+					2)	if nagitive we do 2s complements
+
+				
+
+				multiplication:
+					- Booth's Algorithm
+					- or two rules:
+						1) convert nagative num to positive
+						2) multipy then added the sign
+
+
+				divition:
+					1)	strip the sign
+					2)	do long division of fit or not
+					3) converit the signe, if the answer is nagtive we do 2s complements
 
 
 		system know to represnt it as sign or unsign by the type (int,long / uint)
