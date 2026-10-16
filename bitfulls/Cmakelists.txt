@@ -1,10 +1,26 @@
 cmake_minimum_required(VERSION 3.28)
 
 # this to wake the compiler
-project(bitfulls)
+project(bitfulls VERSION 1.0.0 LANGUAGES CXX)
 
-# make the app portable to other (add c to .exe so it run every where)
-set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+set(CMAKE_COLOR_DIAGNOSTICS ON)
+
+# Enforce GCC compiler strictly - fail if anything else is detected
+if(NOT CMAKE_CXX_COMPILER_ID MATCHES "GNU")
+    message(FATAL_ERROR "This project strictly requires the GNU GCC compiler! Detected unsupported compiler: '${CMAKE_CXX_COMPILER_ID}'. Please configure using a GCC toolchain preset.")
+endif()
+
+
+find_program(CCACHE_PROGRAM ccache)
+if(CCACHE_PROGRAM)
+    set(CMAKE_CXX_COMPILER_LAUNCHER "${CCACHE_PROGRAM}")
+    message(STATUS "CCache enabled: compilation times will be heavily reduced on rebuilds.")
+endif()
+
+
+# Generates compile_commands.json for LSP and debugging tools
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 
 
 set(CMAKE_CXX_STANDARD 20) # stander C++20 use
@@ -12,23 +28,34 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON) # make sure to use C++20, and fail other wis
 set(CMAKE_CXX_EXTENSIONS OFF) # use c++ standerd terms and prevent compiler shortcats
 
 
+# Route all compiled binaries to a clean /bin/ folder
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
 
-# link all the cpp project dynamicaly
+# Automatic file list
 file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
-
-# add the files to the IDA looks, use the glope in top - ${PROJECT_NAME} can be better sometimes
-add_executable(${PROJECT_NAME} "${MY_SOURCES}")
+file(GLOB_RECURSE MY_HEADERS CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/include/*.hpp")
 
 
-# add the files to use with Include
-target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/include/")
+# add the files to the IDA looks
+add_executable(${PROJECT_NAME} ${MY_SOURCES} ${MY_HEADERS})
 
+
+# Include directories (Internal src + Public include)
+target_include_directories(${PROJECT_NAME}
+    PRIVATE 
+        ${CMAKE_CURRENT_SOURCE_DIR}/src
+    PUBLIC 
+        ${CMAKE_CURRENT_SOURCE_DIR}/include
+)
 
 
 # Organizing the Files Tree structure
 set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}/src" PREFIX "Source Files" FILES ${MY_SOURCES})
+source_group(TREE "${CMAKE_CURRENT_SOURCE_DIR}/include" PREFIX "Header Files" FILES ${MY_HEADERS})
 
 
 # compiler to compile heavy headers one time in bolb if not changed - ${PROJECT_NAME} can be better sometimes
@@ -39,56 +66,67 @@ target_precompile_headers(${PROJECT_NAME} PRIVATE
 )
 
 
-if(MSVC)  # If using the VS compiler...
-
-    # 1. Rules for YOUR code
-    target_compile_options(${PROJECT_NAME} PRIVATE 
-        /W4      # Warning Level 4
-        /WX      # Treat warnings as errors
-        /sdl     # Enable Security Development Lifecycle checks
-    )
-
-    # 2. Rules for THIRD PARTY (External) code
-    target_compile_options(${PROJECT_NAME} PRIVATE 
-        /external:W3            # Treat external headers as Level 3
-        /external:anglebrackets # Treat everything in < > as external
-    )
-
-
-    #make sure SIMD optimizations take place
-    add_compile_options(/arch:AVX2) 
-
-    # make it multy processer compile
-    target_compile_options(${PROJECT_NAME} PRIVATE /MP)
-
-
-
-    # Enable faster Debug builds and better "Edit and Continue"
-    target_compile_options(${PROJECT_NAME} PRIVATE /Zi) 
-
-    # Better Debug Info Format
-    target_compile_options(${PROJECT_NAME} PRIVATE /Zc:inline)
-    
-    # Improve the "Auto" window in VS - helps the debugger see variables better
-    target_compile_options(${PROJECT_NAME} PRIVATE $<$<CONFIG:Debug>:/Od>) # Only for Debug
-
-
-
-    # Enable "Standards Conformance"
-    target_compile_options(${PROJECT_NAME} PRIVATE /permissive-)
-
-
-    # Enable Incremental Linking for faster "Edit and Continue"  - INCREMENTAL
-    # Build Speed: "Fast Link"  - DEBUG:FASTLINK
-    set_target_properties(${PROJECT_NAME} PROPERTIES LINK_FLAGS_DEBUG "/INCREMENTAL /DEBUG:FASTLINK")
-
-
-    # define a preprocessor macro when building your target.
-	target_compile_definitions("${CMAKE_PROJECT_NAME}" PUBLIC _CRT_SECURE_NO_WARNINGS)
-
-    # The "UTF-8" Fix
-    target_compile_options(${PROJECT_NAME} PRIVATE /utf-8)
-
-
+# Enable Link-Time Optimization (IPO/LTO) for Release builds
+include(CheckIPOSupported)
+check_ipo_supported(RESULT ipo_supported OUTPUT error)
+if(ipo_supported)
+    set_property(TARGET ${PROJECT_NAME} PROPERTY INTERPROCEDURAL_OPTIMIZATION_RELEASE TRUE)
+    message(STATUS "IPO/LTO enabled for Release builds")
 endif()
 
+
+# Speeds up compilation for large projects by batching source files
+set_target_properties(${PROJECT_NAME} PROPERTIES UNITY_BUILD ON)
+
+
+# Enable testing framework support
+enable_testing()
+
+
+
+
+
+# SIMD optimizations
+target_compile_options(${PROJECT_NAME} PRIVATE -mavx2)
+
+
+# Strict warnings and error handling
+target_compile_options(${PROJECT_NAME} PRIVATE 
+    -Wall 
+    -Wextra 
+    -Werror 
+    -Wpedantic
+    -Wshadow
+    -Wnon-virtual-dtor
+)
+
+
+# Debug information and zero-optimization for debug inspection
+target_compile_options(${PROJECT_NAME} PRIVATE $<$<CONFIG:Debug>:-g -O0>)
+
+
+# AddressSanitizer only works on Unix-like systems (Linux, WSL, macOS), not native MinGW-w64 GCC
+if(NOT WIN32)
+    target_compile_options(${PROJECT_NAME} PRIVATE $<$<CONFIG:Debug>:-fsanitize=address>)
+    target_link_options(${PROJECT_NAME} PRIVATE $<$<CONFIG:Debug>:-fsanitize=address>)
+endif()
+
+
+
+# Separate functions and data into individual sections so unused ones can be stripped
+target_compile_options(${PROJECT_NAME} PRIVATE -ffunction-sections -fdata-sections)
+# Garbage collect unused sections during linking (Release builds)
+target_link_options(${PROJECT_NAME} PRIVATE $<$<CONFIG:Release>:-Wl,--gc-sections>)
+
+# Hide symbols by default to speed up linking and execution
+target_compile_options(${PROJECT_NAME} PRIVATE -fvisibility=hidden -fvisibility-inlines-hidden)
+
+
+# Portable Windows binaries via MinGW (statically links standard libraries)
+if(MINGW)
+    # Statically links the GCC and C++ runtimes so your .exe runs on any Windows PC
+    target_link_options(${PROJECT_NAME} PRIVATE -static-libgcc -static-libstdc++)
+    
+    # Uncomment only if you want full static linking (use with caution regarding threads)
+    # target_link_options(${PROJECT_NAME} PRIVATE -static)
+endif()

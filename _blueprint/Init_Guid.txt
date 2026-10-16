@@ -1,0 +1,30 @@
+====================================================================
+CROSS-PLATFORM C++ DEVELOPMENT ENVIRONMENT SETUP GUIDE (MSYS2 & WSL)
+====================================================================
+
+--------------------------------------------------------------------
+1. WINDOWS: INSTALLING MSYS2 & TOOLCHAIN
+--------------------------------------------------------------------
+Step A: Install MSYS2 (Open PowerShell or Command Prompt and run):
+  winget install MSYS2.MSYS2
+
+  * Alternatively, download and run the installer from: https://www.msys2.org/
+
+Step B: Open the "MSYS2 UCRT64" terminal and run the initial system update:
+  pacman -Syu
+  (Note: If it tells you to close the terminal, close it, reopen MSYS2 UCRT64, and run `pacman -Syu` again until everything is up to date).
+
+Step C: Install the full toolchain, Ninja, CMake, and CCache:
+  pacman -S --needed base-devel mingw-w64-ucrt-x86_64-toolchain mingw-w64-ucrt-x86_64-ninja mingw-w64-ucrt-x86_64-cmake ccache
+
+
+make sure to add this to the envirement varibles path:
+C:\msys64\ucrt64\bin
+
+--------------------------------------------------------------------
+2. WSL / LINUX (UBUNTU): INSTALLING TOOLCHAIN
+--------------------------------------------------------------------
+Step A: Open your WSL Ubuntu terminal.
+
+Step B: Update package lists and install build essentials, CMake, Ninja, GDB, and CCache:
+  sudo apt update && sudo apt install -y build-essential cmake ninja-build gdb ccache

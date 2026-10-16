@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 3.28)
 
 # this to wake the compiler
-project(----- VERSION 1.0.0 LANGUAGES CXX)
+project(Project#0000 VERSION 1.0.0 LANGUAGES CXX)
 
 # make the app portable to other (add c to .exe so it run every where)
 set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
@@ -17,10 +17,9 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
 
 # Automatic file list
 file(GLOB_RECURSE MY_SOURCES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp")
-
 file(GLOB_RECURSE MY_HEADERS CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/include/*.hpp")
 
-# add the files to the IDA looks, use the glope in top - ${PROJECT_NAME} can be better sometimes
+# add the files to the IDA looks
 add_executable(${PROJECT_NAME} ${MY_SOURCES} ${MY_HEADERS})
 
 # Include directories (Internal src + Public include)
@@ -51,7 +50,7 @@ if(ipo_supported)
     message(STATUS "IPO/LTO enabled for Release builds")
 endif()
 
-# Optional: Speeds up compilation for large projects by batching source files
+# Speeds up compilation for large projects by batching source files
 set_target_properties(${PROJECT_NAME} PROPERTIES UNITY_BUILD ON)
 
 # Enable testing framework support
