@@ -20,10 +20,9 @@
       "name": "wsl-debug",
       "displayName": "WSL Linux Debug (GCC + Ninja)",
       "generator": "Ninja",
-      "binaryDir": "${sourceDir}/out/build/wsl-debug",
+      "binaryDir": "$env{HOME}/.cache/cmake-build/${presetName}",
       "cacheVariables": {
         "CMAKE_BUILD_TYPE": "Debug",
-        "CMAKE_C_COMPILER": "gcc",
         "CMAKE_CXX_COMPILER": "g++"
       }
     }
